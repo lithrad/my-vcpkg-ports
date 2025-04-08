@@ -1,0 +1,12 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0e5ac72..63099fc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -98,6 +98,7 @@ else()
+ 
+     # === Includes ===
+     include_directories(BEFORE ${ASIO_INCLUDE_DIR})
++    include_directories(BEFORE ${ASIO_INCLUDE_DIR}/asio/include)
+ 
+     if(DEPS_PREFIX)
+         message(STATUS "deps prefix: " ${DEPS_PREFIX})
