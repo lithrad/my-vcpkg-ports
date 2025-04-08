@@ -1,0 +1,160 @@
+diff --git a/platform/vsnet/eXosip.vcxproj b/platform/vsnet/eXosip.vcxproj
+index 7a780ad..9b3a741 100755
+--- a/platform/vsnet/eXosip.vcxproj
++++ b/platform/vsnet/eXosip.vcxproj
+@@ -91,7 +91,7 @@
+     </Midl>
+     <ClCompile>
+       <Optimization>Disabled</Optimization>
+-      <AdditionalIncludeDirectories>..\..\..\osip\include;..\..\..\exosip\include;..\..\..\c-ares;..\..\..\win32-bin\include;..\..\..\win32-bin\include\tsc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>CARES_STATICLIB;HAVE_CARES_H;SRV_RECORD;_CRT_SECURE_NO_DEPRECATE;HAVE_OPENSSL_SSL_H;ENABLE_TRACE;WIN32;EXOSIP_EXPORTS;_WINDOWS;_USRDLL;_DEBUG;_MT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <ExceptionHandling>
+       </ExceptionHandling>
+@@ -124,7 +124,7 @@
+     </Midl>
+     <ClCompile>
+       <Optimization>Disabled</Optimization>
+-      <AdditionalIncludeDirectories>..\..\..\osip\include;..\..\..\exosip\include;..\..\..\c-ares;..\..\..\win32-bin\include;..\..\..\win32-bin\include\tsc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>CARES_STATICLIB;HAVE_CARES_H;SRV_RECORD;_CRT_SECURE_NO_DEPRECATE;HAVE_OPENSSL_SSL_H;ENABLE_TRACE;WIN32;EXOSIP_EXPORTS;_WINDOWS;_USRDLL;_DEBUG;_MT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <ExceptionHandling>
+       </ExceptionHandling>
+@@ -159,7 +159,7 @@
+     <ClCompile>
+       <Optimization>MaxSpeed</Optimization>
+       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+-      <AdditionalIncludeDirectories>..\..\..\osip\include;..\..\..\exosip\include;..\..\..\c-ares;..\..\..\win32-bin\include;..\..\..\win32-bin\include\tsc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>CARES_STATICLIB;HAVE_CARES_H;SRV_RECORD;_CRT_SECURE_NO_DEPRECATE;HAVE_OPENSSL_SSL_H;ENABLE_TRACE;WIN32;EXOSIP_EXPORTS;_WINDOWS;_USRDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <StringPooling>false</StringPooling>
+       <ExceptionHandling>
+@@ -196,7 +196,7 @@
+     <ClCompile>
+       <Optimization>MaxSpeed</Optimization>
+       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+-      <AdditionalIncludeDirectories>..\..\..\osip\include;..\..\..\exosip\include;..\..\..\c-ares;..\..\..\win32-bin\include;..\..\..\win32-bin\include\tsc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>CARES_STATICLIB;HAVE_CARES_H;SRV_RECORD;_CRT_SECURE_NO_DEPRECATE;HAVE_OPENSSL_SSL_H;ENABLE_TRACE;WIN32;EXOSIP_EXPORTS;_WINDOWS;_USRDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <StringPooling>false</StringPooling>
+       <ExceptionHandling>
+@@ -220,58 +220,58 @@
+     </ResourceCompile>
+   </ItemDefinitionGroup>
+   <ItemGroup>
+-    <ClCompile Include="..\..\..\exosip\src\eXcall_api.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXconf.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXinsubscription_api.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXmessage_api.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXoptions_api.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXosip.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXpublish_api.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXregister_api.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXsubscription_api.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXtl_dtls.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXtl_tcp.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXtl_tls.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXtl_udp.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXtransport.c" />
+-    <ClCompile Include="..\..\..\exosip\src\eXutils.c" />
+-    <ClCompile Include="..\..\..\exosip\src\inet_ntop.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jauth.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jcall.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jcallback.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jdialog.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jevents.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jnotify.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jpipe.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jpublish.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jreg.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jrequest.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jresponse.c" />
+-    <ClCompile Include="..\..\..\exosip\src\jsubscribe.c" />
+-    <ClCompile Include="..\..\..\exosip\src\milenage.c" />
+-    <ClCompile Include="..\..\..\exosip\src\misc.c" />
+-    <ClCompile Include="..\..\..\exosip\src\rijndael.c" />
+-    <ClCompile Include="..\..\..\exosip\src\sdp_offans.c" />
+-    <ClCompile Include="..\..\..\exosip\src\udp.c" />
++    <ClCompile Include="..\..\src\eXcall_api.c" />
++    <ClCompile Include="..\..\src\eXconf.c" />
++    <ClCompile Include="..\..\src\eXinsubscription_api.c" />
++    <ClCompile Include="..\..\src\eXmessage_api.c" />
++    <ClCompile Include="..\..\src\eXoptions_api.c" />
++    <ClCompile Include="..\..\src\eXosip.c" />
++    <ClCompile Include="..\..\src\eXpublish_api.c" />
++    <ClCompile Include="..\..\src\eXregister_api.c" />
++    <ClCompile Include="..\..\src\eXsubscription_api.c" />
++    <ClCompile Include="..\..\src\eXtl_dtls.c" />
++    <ClCompile Include="..\..\src\eXtl_tcp.c" />
++    <ClCompile Include="..\..\src\eXtl_tls.c" />
++    <ClCompile Include="..\..\src\eXtl_udp.c" />
++    <ClCompile Include="..\..\src\eXtransport.c" />
++    <ClCompile Include="..\..\src\eXutils.c" />
++    <ClCompile Include="..\..\src\inet_ntop.c" />
++    <ClCompile Include="..\..\src\jauth.c" />
++    <ClCompile Include="..\..\src\jcall.c" />
++    <ClCompile Include="..\..\src\jcallback.c" />
++    <ClCompile Include="..\..\src\jdialog.c" />
++    <ClCompile Include="..\..\src\jevents.c" />
++    <ClCompile Include="..\..\src\jnotify.c" />
++    <ClCompile Include="..\..\src\jpipe.c" />
++    <ClCompile Include="..\..\src\jpublish.c" />
++    <ClCompile Include="..\..\src\jreg.c" />
++    <ClCompile Include="..\..\src\jrequest.c" />
++    <ClCompile Include="..\..\src\jresponse.c" />
++    <ClCompile Include="..\..\src\jsubscribe.c" />
++    <ClCompile Include="..\..\src\milenage.c" />
++    <ClCompile Include="..\..\src\misc.c" />
++    <ClCompile Include="..\..\src\rijndael.c" />
++    <ClCompile Include="..\..\src\sdp_offans.c" />
++    <ClCompile Include="..\..\src\udp.c" />
+   </ItemGroup>
+   <ItemGroup>
+-    <ClInclude Include="..\..\..\exosip\include\eXosip2\eX_call.h" />
+-    <ClInclude Include="..\..\..\exosip\include\eXosip2\eX_message.h" />
+-    <ClInclude Include="..\..\..\exosip\include\eXosip2\eX_options.h" />
+-    <ClInclude Include="..\..\..\exosip\include\eXosip2\eX_publish.h" />
+-    <ClInclude Include="..\..\..\exosip\include\eXosip2\eX_refer.h" />
+-    <ClInclude Include="..\..\..\exosip\include\eXosip2\eX_register.h" />
+-    <ClInclude Include="..\..\..\exosip\include\eXosip2\eX_setup.h" />
+-    <ClInclude Include="..\..\..\exosip\include\eXosip2\eX_subscribe.h" />
+-    <ClInclude Include="..\..\..\exosip\include\eXosip2\eXosip.h" />
+-    <ClInclude Include="..\..\..\exosip\src\eXosip2.h" />
+-    <ClInclude Include="..\..\..\exosip\src\eXtransport.h" />
+-    <ClInclude Include="..\..\..\exosip\src\inet_ntop.h" />
+-    <ClInclude Include="..\..\..\exosip\src\jpipe.h" />
+-    <ClInclude Include="..\..\..\exosip\src\milenage.h" />
+-    <ClInclude Include="..\..\..\exosip\src\rijndael.h" />
++    <ClInclude Include="..\..\include\eXosip2\eX_call.h" />
++    <ClInclude Include="..\..\include\eXosip2\eX_message.h" />
++    <ClInclude Include="..\..\include\eXosip2\eX_options.h" />
++    <ClInclude Include="..\..\include\eXosip2\eX_publish.h" />
++    <ClInclude Include="..\..\include\eXosip2\eX_refer.h" />
++    <ClInclude Include="..\..\include\eXosip2\eX_register.h" />
++    <ClInclude Include="..\..\include\eXosip2\eX_setup.h" />
++    <ClInclude Include="..\..\include\eXosip2\eX_subscribe.h" />
++    <ClInclude Include="..\..\include\eXosip2\eXosip.h" />
++    <ClInclude Include="..\..\src\eXosip2.h" />
++    <ClInclude Include="..\..\src\eXtransport.h" />
++    <ClInclude Include="..\..\src\inet_ntop.h" />
++    <ClInclude Include="..\..\src\jpipe.h" />
++    <ClInclude Include="..\..\src\milenage.h" />
++    <ClInclude Include="..\..\src\rijndael.h" />
+   </ItemGroup>
+-  <ItemGroup>
++  <!--ItemGroup>
+     <ProjectReference Include="..\..\..\osip\platform\vsnet\osip2.vcxproj">
+       <Project>{85255507-5d16-4218-85e2-f683bb2f04da}</Project>
+     </ProjectReference>
+@@ -281,8 +281,8 @@
+     <ProjectReference Include="libcares.vcxproj">
+       <Project>{6bce0e64-5a72-4243-b385-88e62c8e398a}</Project>
+     </ProjectReference>
+-  </ItemGroup>
++  </ItemGroup-->
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+   <ImportGroup Label="ExtensionTargets">
+   </ImportGroup>
+-</Project>
+\ No newline at end of file
++</Project>

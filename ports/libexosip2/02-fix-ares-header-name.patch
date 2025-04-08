@@ -1,0 +1,13 @@
+diff --git a/src/eXutils.c b/src/eXutils.c
+index 591c2f0..8f76cb6 100644
+--- a/src/eXutils.c
++++ b/src/eXutils.c
+@@ -1643,7 +1643,7 @@ const char *_eXosip_dnsutils_find_sni(struct eXosip_t *excontext, const char *ho
+ #ifdef HAVE_ARPA_NAMESER_H
+ #include <arpa/nameser.h>
+ #else
+-#include "nameser.h"
++#include "ares_nameser.h"
+ #endif
+ #ifdef HAVE_ARPA_NAMESER_COMPAT_H
+ #include <arpa/nameser_compat.h>

@@ -1,0 +1,17 @@
+{
+  "name": "libexosip2",
+  "version": "5.3.0",
+  "port-version": 1,
+  "description": "eXosip is a GPL library that extend the capability of the oSIP library. It aims to implement a simple high layer API to control SIP (rfc3261) for sessions establishements and common extensions.",
+  "homepage": "http://savannah.gnu.org/projects/exosip",
+  "supports": "!(windows & arm) & !uwp",
+  "dependencies": [
+    "c-ares",
+    "libosip2",
+    {
+      "name": "vcpkg-msbuild",
+      "host": true,
+      "platform": "windows"
+    }
+  ]
+}
