@@ -7,8 +7,8 @@ vcpkg_from_github(
     SHA512 16baaa9921228c48bfee2aa795b0c644228ceeae32430d2782593dd8087978359edcf47e17e551fbf475df22b127097d8d149fc0996c9ade7b5ae7bafd183f62
     HEAD_REF master
 	PATCHES
-        01-fix-not-keyword.patch
-        02-fix-cmake-build.patch
+        0001-fix-not-keyword.patch
+        0002-fix-cmake-build.patch
 )
 
 vcpkg_from_github(

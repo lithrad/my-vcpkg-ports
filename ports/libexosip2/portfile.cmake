@@ -6,8 +6,8 @@ vcpkg_download_distfile(ARCHIVE
 
 set(PATCHES)
 if(VCPKG_TARGET_IS_WINDOWS)
-    list(APPEND PATCHES 01-fix-path-in-project.patch)
-	list(APPEND PATCHES 02-fix-ares-header-name.patch)
+    list(APPEND PATCHES 0001-fix-path-in-project.patch)
+    list(APPEND PATCHES 0002-fix-ares-header-name.patch)
 endif()
 
 vcpkg_extract_source_archive(

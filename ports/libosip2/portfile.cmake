@@ -6,7 +6,7 @@ vcpkg_download_distfile(ARCHIVE
 
 set(PATCHES)
 if(VCPKG_TARGET_IS_WINDOWS)
-    list(APPEND PATCHES fix-path-in-project.patch)
+    list(APPEND PATCHES 0001-fix-path-in-project.patch)
 endif()
 
 vcpkg_extract_source_archive(
