@@ -1,8 +1,8 @@
-vcpkg_download_distfile(ARCHIVE
-    URLS "https://download.savannah.nongnu.org/releases/exosip/libexosip2-${VERSION}.tar.gz"
-    FILENAME "libosip2-${VERSION}.tar.gz"
-    SHA512 546491224d2ac542c032d704be0e08ef0a08dcf74aa706ad40bd0d30d8e3c28419139d14fa2c31f601e19879d00b2b0cea65c08edecbf560b3f5599ef0335828
-)
+#vcpkg_download_distfile(ARCHIVE
+#    URLS "https://download.savannah.nongnu.org/releases/exosip/libexosip2-${VERSION}.tar.gz"
+#    FILENAME "libexosip2-${VERSION}.tar.gz"
+#    SHA512 546491224d2ac542c032d704be0e08ef0a08dcf74aa706ad40bd0d30d8e3c28419139d14fa2c31f601e19879d00b2b0cea65c08edecbf560b3f5599ef0335828
+#)
 
 set(PATCHES)
 if(VCPKG_TARGET_IS_WINDOWS)
@@ -10,9 +10,18 @@ if(VCPKG_TARGET_IS_WINDOWS)
     list(APPEND PATCHES 0002-fix-ares-header-name.patch)
 endif()
 
-vcpkg_extract_source_archive(
-    SOURCE_PATH
-    ARCHIVE "${ARCHIVE}"
+#vcpkg_extract_source_archive(
+#    SOURCE_PATH
+#    ARCHIVE "${ARCHIVE}"
+#    PATCHES ${PATCHES}
+#)
+
+vcpkg_from_github(
+    OUT_SOURCE_PATH SOURCE_PATH
+    REPO lithrad/libexosip2
+    REF 7b0983106eaf7f9bad227922e8905bcf0a7b4f59
+    SHA512 9fc09c0ad372b4431a03ad66a277c4afbb2d5ffbd13796cb9add3a62d9c46aae2ebdd9b2094be70ff57474064812c550ac04b9e8be8b4ec329b4da0d2bbe8a86
+    HEAD_REF master
     PATCHES ${PATCHES}
 )
 

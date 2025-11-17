@@ -6,7 +6,10 @@
   "license": "Apache-2.0",
   "dependencies": [
     "asio",
-    "openssl",
+    {
+      "name": "openssl",
+      "platform": "!windows"
+    },
     {
       "name": "vcpkg-cmake",
       "host": true
