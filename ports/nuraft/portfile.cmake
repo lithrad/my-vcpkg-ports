@@ -4,15 +4,14 @@ vcpkg_from_github(
     REF "v${VERSION}"
     SHA512 16baaa9921228c48bfee2aa795b0c644228ceeae32430d2782593dd8087978359edcf47e17e551fbf475df22b127097d8d149fc0996c9ade7b5ae7bafd183f62
     HEAD_REF master
-    PATCHES
-        fix-build-compatibility-issues.patch
+    PATCHES fix-build-compatibility-issues.patch
 )
 
 if(VCPKG_TARGET_IS_WINDOWS)
     vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 endif()
 
-vcpkg_configure_cmake(
+vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
         -DBUILD_EXAMPLES=OFF

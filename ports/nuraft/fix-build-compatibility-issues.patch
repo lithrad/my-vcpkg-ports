@@ -1,13 +1,17 @@
-diff --git a/src/tracer.hxx b/src/tracer.hxx
-index ac5f100..e10b30a 100644
---- a/src/tracer.hxx
-+++ b/src/tracer.hxx
-@@ -53,7 +53,7 @@ static inline std::string msg_if_given(const char* format, ...) {
-     }
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0e5ac72..e76e277 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -211,6 +211,12 @@ else()
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd5045 /wd4571 /wd4774 /wd4820 /wd5039 /wd4626 /wd4625 /wd5026 /wd5027 /wd4623 /wd4996 /wd4530 /wd4267 /wd4244 /W3")
+     message(STATUS "---- WIN32 ----")
  
-     // Get rid of newline at the end.
--    if ((not msg.empty()) && (msg.back() == '\n')) {
-+    if ((!msg.empty()) && (msg.back() == '\n')) {
-         msg.pop_back();
-     }
-     return msg;
++    if (MSVC_VERSION GREATER 1925)
++        add_compile_options(/Zc:preprocessor /wd5105)
++    else()
++        add_compile_options(/experimental:preprocessor /wd5105)
++    endif()
++
+     if(USE_PTHREAD_EXIT)
+         message(FATAL_ERROR "Using ::pthread_exit not supported on Windows")
+     endif()
